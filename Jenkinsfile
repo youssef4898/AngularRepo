@@ -12,7 +12,7 @@ pipeline {
 	stage('build'){
 	  steps{
       script{
-        sh'npm install -g'
+        sh "export PATH=/root/.nvm/versions/node/v14.17.0/bin:$PATH"
         sh "ansible-playbook Ansible/build.yml -i Ansible/inventory/host.yml"
 
       }
