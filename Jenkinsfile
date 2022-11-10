@@ -6,5 +6,8 @@ pipeline {
           sh "echo 'helloWord' "
         }
       }
+	stage('build'){
+	  steps{
+		
     }
 }
