@@ -12,7 +12,7 @@ pipeline {
 	stage('build'){
 	  steps{
       script{
-        sh ' node -v '
+       
         sh "ansible-playbook Ansible/build.yml -i Ansible/inventory/host.yml"
 
       }
