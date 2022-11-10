@@ -1,4 +1,4 @@
 - name: build app
-  command: /var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/16.13.0/bin/npm "run ng build"
+  command: /var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/16.13.0/bin/npm "install"
   environment:
-    PATH: "{{ ansible_env.PATH }}:/var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/16.13.0/bin/node"
+    PATH: "{{ ansible_env.PATH }}:/var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/16.13.0/bin"
