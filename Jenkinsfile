@@ -1,7 +1,7 @@
 pipeline {
   agent any
   tools{
-    nodeJS'14.17.0'
+    NodeJS'14.17.0'
   }
     stages { 
       stage ("Pull"){
