@@ -1,5 +1,4 @@
----
-# tasks file for build
-# build project
-        - name: build
-          shell: ng build --prod
+- name: build app
+  command: /root/.nvm/versions/node/v14.17.0/bin/ng "build"
+  environment:
+    PATH: "{{ ansible_env.PATH }}:/root/.nvm/versions/node/v14.17.0/bin"
