@@ -1,2 +1,9 @@
 ---
 # tasks file for docker-registry
+- name: Tag image
+  become: yes
+  shell: docker tag devops youssef1998/angular:latest
+  
+- name: Tag and push to docker hub
+  become: yes
+  shell: docker push youssef1998/angular:latest
