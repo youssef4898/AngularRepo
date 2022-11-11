@@ -31,13 +31,13 @@ pipeline {
 }
       stage('push the image to a dockerhub repository') {
             steps {
-               withDockerRegistry([credentialsId: "docker-hub", url: ""]){
+                sh " docker login -u youssef1998 -p 123456789 "
                 sh 'ansible-playbook ansible/docker-registry.yml -i ansible/inventory/hosts.yml'
                          }
                   }
                          
                          
-        }
+        
       
     }
 }
