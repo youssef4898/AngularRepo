@@ -3,12 +3,12 @@ pipeline {
   tools{
     nodejs'16.13.0'
   }
-    stages { 
-      stage ("Pull"){
-        steps {
-          sh "echo 'helloWord' "
+  stage('Git ') {
+            steps {
+                echo 'pulling Main Project from git ...';
+                git branch: 'master', credentialsId: 'git', url: 'https://github.com/youssef4898/AngularRepo.git '            }
         }
-      }
+  
 	stage('build'){
 	  steps{
       script{
@@ -28,7 +28,15 @@ pipeline {
 		
     }
 }
-      
+      stage('push the image to a dockerhub repository') {
+            steps {
+               withDockerRegistry([credentialsId: "docker-hub", url: ""]){
+                sh 'ansible-playbook ansible/docker-registry.yml -i ansible/inventory/hosts.yml'
+                         }
+                  }
+                         
+                         
+        }
       
     }
 }
