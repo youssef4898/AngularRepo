@@ -32,7 +32,7 @@ pipeline {
       stage('push the image to a dockerhub repository') {
             steps {
                 sh " docker login -u youssef1998 -p 123456789 "
-                sh 'ansible-playbook ansible/docker-registry.yml -i ansible/inventory/hosts.yml'
+                sh 'ansible-playbook Ansible/docker-registry.yml -i Ansible/inventory/hosts.yml'
                          }
                   }
                          
